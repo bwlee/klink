@@ -1,8 +1,8 @@
+from __future__ import print_function
 import os
 from subprocess import call
 import shutil
 import re
-
 
 def convert_notebooks():
     """
@@ -21,7 +21,7 @@ def convert_notebooks():
         name = names[i]
         notebook = notebooks[i]
 
-        print 'processing %s (%s)' % (name, notebook)
+        print('processing %s (%s)' % (name, notebook))
 
         # move static files
         # if notebook contains no images, sdir is not created
@@ -34,7 +34,7 @@ def convert_notebooks():
 
         # rename static dir in rst file
         rst_file = '%s.rst' % name
-        print 'REsT file is %s' % rst_file
+        print('REsT file is %s' % rst_file)
         data = None
         with open(rst_file, 'r') as f:
             data = f.read()
